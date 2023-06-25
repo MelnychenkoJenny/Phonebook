@@ -10,9 +10,8 @@ export const Error = ({ error }) => {
         src={EmptyImg}
         alt="emptyImageCat"
         style={{
-          marginTop: '15px',
           width: '170px',
-          margin: '0 auto',
+          margin: '15px auto auto',
         }}
       />
     </div>

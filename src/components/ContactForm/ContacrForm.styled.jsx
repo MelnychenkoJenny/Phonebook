@@ -34,7 +34,7 @@ export const InputGroup = styled.div`
   }
 `;
 
-export const InputName = styled.input`
+export const Input = styled.input`
   width: 230px;
   padding: 5px 8px;
   outline: none;

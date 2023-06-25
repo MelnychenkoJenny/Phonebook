@@ -5,7 +5,7 @@ import * as yup from 'yup';
 import { useForm } from 'react-hook-form';
 import {
   FormStyle,
-  InputName,
+  Input,
   InputGroup,
   InputLabel,
   Button,
@@ -13,7 +13,12 @@ import {
 } from './ContacrForm.styled';
 import { phoneRegExp } from 'components/calc/phoneRegExp';
 import { toast } from 'react-toastify';
-import { useAddContactsMutation, useFetchContactsQuery } from 'redux/RTK-query/contactsApi';
+import {
+  useAddContactsMutation,
+  useFetchContactsQuery,
+} from 'redux/Contacts/contactsApi';
+import { IoPersonAddOutline } from 'react-icons/io5';
+import 'react-toastify/dist/ReactToastify.css';
 
 const schema = yup.object().shape({
   name: yup.string().required("Ім'я обов'язкове!"),
@@ -31,8 +36,8 @@ const nameId = nanoid();
 const numberId = nanoid();
 
 export const ContactForm = () => {
-  const { data: contacts=[] } = useFetchContactsQuery();
-  const[addContacts]=useAddContactsMutation()
+  const { data: contacts = [] } = useFetchContactsQuery();
+  const [addContacts] = useAddContactsMutation();
 
   const {
     register,
@@ -45,6 +50,7 @@ export const ContactForm = () => {
 
   const onSubmit = data => {
     addContact(data.name.trim(), data.number);
+    
     const repeatName = contacts.some(
       el => el.name.toLowerCase() === data.name.trim().toLowerCase()
     );
@@ -54,6 +60,7 @@ export const ContactForm = () => {
     if (repeatName || repeatNumber) {
       return;
     }
+   
     reset();
   };
   const addContact = (name, number) => {
@@ -79,7 +86,7 @@ export const ContactForm = () => {
       number,
       id: nanoid(),
     };
-
+    toast.success('Новий контакт додано');
     addContacts(contactItem);
   };
 
@@ -87,11 +94,11 @@ export const ContactForm = () => {
     <FormStyle onSubmit={handleSubmit(onSubmit)}>
       <InputGroup>
         <InputLabel htmlFor={nameId}>Ім'я</InputLabel>
-        <InputName
+        <Input
           {...register('name')}
           type="text"
           name="name"
-          title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
+          title="Name may contain letters and numbers, apostrophe, dash and spaces. For example Adrian, Jacob Mercer2, Charles de Batz de Castelmore d'Artagnan"
           // required
           id={nameId}
         />
@@ -102,7 +109,7 @@ export const ContactForm = () => {
       </InputGroup>
       <InputGroup>
         <InputLabel htmlFor={numberId}>Телефон</InputLabel>
-        <InputName
+        <Input
           {...register('number')}
           type="tel"
           name="number"
@@ -114,7 +121,9 @@ export const ContactForm = () => {
           <ErrorMessageStyle>{errors.number?.message}</ErrorMessageStyle>
         )}
       </InputGroup>
-      <Button type="submit">Додати контакт</Button>
+      <Button type="submit">Додати контакт
+      <IoPersonAddOutline/>
+      </Button>
     </FormStyle>
   );
 };
