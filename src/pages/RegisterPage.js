@@ -53,7 +53,7 @@ export default function RegisterPage() {
   };
 
   return (
-    <Container>
+    <Container >
       <FormStyle onSubmit={handleSubmit(onSubmit)}>
         <InputGroup>
           <InputLabel htmlFor={nameId}>Ім'я / Нік</InputLabel>

@@ -4,12 +4,12 @@ import { useDeleteContactsMutation } from 'redux/Contacts/contactsApi';
 import { ContactsList, ContactsItem, ButtonDelete } from './Contacts.styled';
 
 export const Contacts = ({ contacts }) => {
-  // const dispatch = useDispatch();
+
   const [deleteContact] =  useDeleteContactsMutation()
 
 const handleDeleteContact = (id) => {
   deleteContact(id)
-  toast.success('Новий контакт додано');
+  toast.info('Контакт успішно видалено');
 }
  
   return (
