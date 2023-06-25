@@ -43,9 +43,9 @@ export default function LoginPage() {
   const dispatch = useDispatch();
 
   const onSubmit = ({ email, password }) => {
-    const dataLigIn = { email, password };
+    const dataLogIn = { email, password };
 
-    dispatch(logIn(dataLigIn));
+    dispatch(logIn(dataLogIn));
     reset();
   };
   return (
