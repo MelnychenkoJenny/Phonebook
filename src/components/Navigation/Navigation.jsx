@@ -1,5 +1,5 @@
 import { useAuth } from "components/hooks"
-import { NavLink } from "react-router-dom"
+import { NavLinkStyle } from "./Navigation.styled"
 
 
 export const Navigation = () => {
@@ -8,12 +8,12 @@ export const Navigation = () => {
     <nav>
     <ul>
       <li>
-        <NavLink to="/" end>
+        <NavLinkStyle to="/" end>
          Головна
-        </NavLink>
+        </NavLinkStyle>
       </li>
 {isLoggedIn && (<li>
-        <NavLink to="/contacts">Мої контакти</NavLink>
+        <NavLinkStyle to="/contacts">Мої контакти</NavLinkStyle>
       </li>)}
       
     </ul>

@@ -11,19 +11,7 @@ position: relative;
   padding-right: 15px;
 `;
 
-export const MainTitle = styled.h1`
-  margin-bottom: 20px;
-  text-shadow: ${({ theme: { colors } }) => colors.textShadowLight};
-  @media screen and (min-width: 768px) {
-    margin: 0px auto 20px 0px;
-    
-    font-size: 30px;
-  }
-  @media screen and (min-width: 1200px) {
-    margin: 0px auto 10px 80px;
-    font-size: 40px;
-  }
-`;
+
 
 export const Title = styled.h2`
   text-align: center;

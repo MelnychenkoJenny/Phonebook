@@ -14,6 +14,9 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
 import { logIn } from 'redux/Auth/operationsAuth';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { ContainerLogInPage } from './LogInPage.styled';
 
 const schema = yup.object().shape({
   email: yup
@@ -45,11 +48,19 @@ export default function LoginPage() {
   const onSubmit = ({ email, password }) => {
     const dataLogIn = { email, password };
 
-    dispatch(logIn(dataLogIn));
-    reset();
+    dispatch(logIn(dataLogIn))
+      .unwrap()
+      .then(({ user: { name } }) =>
+        {reset();
+          return toast.success(`Вітаємо, ${name} у твоїй особистій телефонній книзі.`)}
+      )
+      .catch(() =>
+        toast.error('Упс. Пошта або пароль не вірні. Спробуйте ще раз. 🙄')
+      );
+    
   };
   return (
-    <Container>
+    <ContainerLogInPage>
       <FormStyle onSubmit={handleSubmit(onSubmit)}>
         <InputGroup>
           <InputLabel htmlFor={emailId}>Пошта</InputLabel>
@@ -82,6 +93,6 @@ export default function LoginPage() {
           <CiLogin />
         </Button>
       </FormStyle>
-    </Container>
+    </ContainerLogInPage>
   );
 }

@@ -1,6 +1,5 @@
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
-import { Container } from 'components/App/App.styled';
 import {
   Button,
   ErrorMessageStyle,
@@ -14,14 +13,15 @@ import { useForm } from 'react-hook-form';
 import { MdAppRegistration } from 'react-icons/md';
 import { useDispatch } from 'react-redux';
 import { registerAuth } from 'redux/Auth/operationsAuth';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { ContainerRegisterPage } from './RegisterPage.styled';
 
 const schema = yup.object().shape({
   name: yup.string().required("Ім'я обов'язкове!"),
   email: yup
     .string()
-    .email(
-      "Пошта латиницею, має містити @ та текст після"
-    )
+    .email('Пошта латиницею, має містити @ та текст після')
     .required("Пошта обов'язкова!"),
   password: yup
     .string()
@@ -46,14 +46,25 @@ export default function RegisterPage() {
 
   const dispatch = useDispatch();
 
-  const onSubmit = ({name, email, password}) => {
-    const dataRegister = {name, email, password};
+  const onSubmit = ({ name, email, password }) => {
+    const dataRegister = { name, email, password };
     dispatch(registerAuth(dataRegister))
-    reset();
+      .unwrap()
+      .then(({ user: { name } }) =>
+
+       { reset();
+        return toast.success(`Вітаємо, ${name} у твоїй особистій телефонній книзі.`)}
+      )
+      .catch(() =>
+        toast.error(
+          'Упс. Сталась помилка. Перевірте чи всі дані введено вірно або Ви вже зараєстровані.🙄'
+        )
+      );
+    
   };
 
   return (
-    <Container >
+    <ContainerRegisterPage>
       <FormStyle onSubmit={handleSubmit(onSubmit)}>
         <InputGroup>
           <InputLabel htmlFor={nameId}>Ім'я / Нік</InputLabel>
@@ -62,7 +73,7 @@ export default function RegisterPage() {
             type="text"
             name="name"
             id={nameId}
-            title="Ім'я може містити літери та цифри, апостроф, тире та пробіли. Наприклад Адріан, Мерсер2, д'Артаньян"
+            title="Ім'я може містити літери та цифри, апостроф, тире та пробіли. Наприклад: Адріан, Мерсер2, д'Артаньян"
           />
           {errors.name && (
             <ErrorMessageStyle>{errors.name?.message}</ErrorMessageStyle>
@@ -75,7 +86,7 @@ export default function RegisterPage() {
             name="email"
             id={emailId}
             {...register('email')}
-            title="Пошта обов'язково латиницею, має містити @ та текст після."
+            title="Пошта обов'язково латиницею, має містити @ та текст після. Наприклад: poshta@gameil.com"
           />
           {errors.email && (
             <ErrorMessageStyle>{errors.email?.message}</ErrorMessageStyle>
@@ -99,6 +110,6 @@ export default function RegisterPage() {
           <MdAppRegistration />
         </Button>
       </FormStyle>
-    </Container>
+    </ContainerRegisterPage>
   );
 }

@@ -19,6 +19,7 @@ import {
 } from 'redux/Contacts/contactsApi';
 import { IoPersonAddOutline } from 'react-icons/io5';
 import 'react-toastify/dist/ReactToastify.css';
+import { Title } from 'components/App/App.styled';
 
 const schema = yup.object().shape({
   name: yup.string().required("Ім'я обов'язкове!"),
@@ -92,6 +93,7 @@ export const ContactForm = () => {
 
   return (
     <FormStyle onSubmit={handleSubmit(onSubmit)}>
+       <Title>Створити контакт</Title>
       <InputGroup>
         <InputLabel htmlFor={nameId}>Ім'я</InputLabel>
         <Input

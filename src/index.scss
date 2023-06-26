@@ -7,15 +7,15 @@ body {
   -moz-osx-font-smoothing: grayscale;
   color: #423d37;
   background-color: #f0e9e0;
-  // background-size: cover;
-  // background-position: center;
-  // background-repeat: no-repeat;
-  // background-attachment: fixed;
-  // background-image: url(./components/images/fon640.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-image: url(./components/images/fon640.jpg);
 
-  // @media screen and (min-width: 768px) {
-  //   background-image: url(./components/images/notebook1280.jpg);
-  // }
+  @media screen and (min-width: 768px) {
+    background-image: url(./components/images/notebook1280.jpg);
+  }
 }
 
 code {
@@ -40,4 +40,9 @@ ul {
 }
 button {
   cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
 }
