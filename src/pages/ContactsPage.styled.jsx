@@ -10,6 +10,6 @@ const slideIn = keyframes` from {
 
 export const ContainerContactsPage = styled(Container)`
   animation: ${slideIn} 0.35s ease-out forwards;
-  padding-bottom: 70px;
+  padding-bottom: 100px;
   transform: translateY(100%);
 `;
