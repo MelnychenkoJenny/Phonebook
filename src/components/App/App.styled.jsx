@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-position: relative;
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -10,8 +10,6 @@ position: relative;
   padding-left: 15px;
   padding-right: 15px;
 `;
-
-
 
 export const Title = styled.h2`
   text-align: center;

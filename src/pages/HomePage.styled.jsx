@@ -12,13 +12,14 @@ to {
 export const ContainerHomePage = styled(Container)`
   padding-top: 40px;
   padding-bottom: 40px;
+  height: 100vh;
   background-color: ${({ theme: { colors } }) => colors.bgAlfa};
 
   animation: ${slideIn} 0.35s ease-out forwards;
   transform: translateY(100%);
   @media screen and (min-width: 768px) {
     width: 50%;
-    height: 100vh;
+
   }
   @media screen and (min-width: 1200px) {
     padding-left: 30px;
@@ -65,7 +66,7 @@ export const IconBox = styled.div`
 `;
 
 export const LinkStyle = styled(Link)`
-display: inline-block;
+  display: inline-block;
   position: relative;
   font-size: inherit;
   font-weight: 600;
@@ -89,5 +90,4 @@ display: inline-block;
     transition: background-color 0.3s ease;
     background-color: #684c4c;
   }
-
 `;

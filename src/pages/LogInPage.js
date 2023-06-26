@@ -50,19 +50,20 @@ export default function LoginPage() {
 
     dispatch(logIn(dataLogIn))
       .unwrap()
-      .then(({ user: { name } }) =>
-        {reset();
-          return toast.success(`Вітаємо, ${name} у твоїй особистій телефонній книзі.`)}
-      )
+      .then(({ user: { name } }) => {
+        reset();
+        return toast.success(
+          `Вітаємо, ${name} у твоїй особистій телефонній книзі.`
+        );
+      })
       .catch(() =>
         toast.error('Упс. Пошта або пароль не вірні. Спробуйте ще раз. 🙄')
       );
-    
   };
   return (
     <ContainerLogInPage>
       <FormStyle onSubmit={handleSubmit(onSubmit)}>
-      <Title>Вхід в систему</Title>
+        <Title>Вхід в систему</Title>
         <InputGroup>
           <InputLabel htmlFor={emailId}>Пошта</InputLabel>
           <Input

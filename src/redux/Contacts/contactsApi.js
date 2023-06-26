@@ -10,7 +10,8 @@ export const contactsApi = createApi({
         headers.set('authorization', `Bearer ${token}`);
       }
 
-      return headers;},
+      return headers;
+    },
   }),
   tagTypes: ['Contacts'],
   endpoints: builder => ({

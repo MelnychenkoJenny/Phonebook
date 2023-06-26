@@ -5,7 +5,6 @@ import { selectFilter } from 'redux/selectors';
 import { setFilter } from 'redux/Filter/filterSlice';
 import { BsSearchHeart } from 'react-icons/bs';
 
-
 const filtrId = nanoid();
 
 export const Filter = () => {
@@ -15,16 +14,13 @@ export const Filter = () => {
   const changeFilter = event => {
     dispatch(setFilter(event.currentTarget.value.trim()));
   };
-  
+
   return (
     <InputGroup>
-      <Label htmlFor={filtrId}>Пошук контактів за іменем <BsSearchHeart/></Label>
-      <Input
-        type="text"
-        name={filter}
-        onChange={changeFilter}
-        id={filtrId}
-      />
+      <Label htmlFor={filtrId}>
+        Пошук контактів за іменем <BsSearchHeart />
+      </Label>
+      <Input type="text" name={filter} onChange={changeFilter} id={filtrId} />
     </InputGroup>
   );
 };

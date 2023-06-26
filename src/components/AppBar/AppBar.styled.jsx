@@ -10,7 +10,7 @@ export const HeaderContainer = styled.header`
 `;
 
 export const Logo = styled.img`
-@media screen and (min-width: 1200px) {
- width: 60px;
-}
-`
+  @media screen and (min-width: 1200px) {
+    width: 60px;
+  }
+`;

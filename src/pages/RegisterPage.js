@@ -51,24 +51,23 @@ export default function RegisterPage() {
     const dataRegister = { name, email, password };
     dispatch(registerAuth(dataRegister))
       .unwrap()
-      .then(({ user: { name } }) =>
-
-       { reset();
-        return toast.success(`Вітаємо, ${name} у твоїй особистій телефонній книзі.`)}
-      )
+      .then(({ user: { name } }) => {
+        reset();
+        return toast.success(
+          `Вітаємо, ${name} у твоїй особистій телефонній книзі.`
+        );
+      })
       .catch(() =>
         toast.error(
           'Упс. Сталась помилка. Перевірте чи всі дані введено вірно або Ви вже зараєстровані.🙄'
         )
       );
-    
   };
 
   return (
     <ContainerRegisterPage>
-            
       <FormStyle onSubmit={handleSubmit(onSubmit)}>
-      <Title>Реєстрація</Title>
+        <Title>Реєстрація</Title>
         <InputGroup>
           <InputLabel htmlFor={nameId}>Ім'я / Нік</InputLabel>
           <Input

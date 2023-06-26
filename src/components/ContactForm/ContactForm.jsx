@@ -51,7 +51,7 @@ export const ContactForm = () => {
 
   const onSubmit = data => {
     addContact(data.name.trim(), data.number);
-    
+
     const repeatName = contacts.some(
       el => el.name.toLowerCase() === data.name.trim().toLowerCase()
     );
@@ -61,7 +61,7 @@ export const ContactForm = () => {
     if (repeatName || repeatNumber) {
       return;
     }
-   
+
     reset();
   };
   const addContact = (name, number) => {
@@ -93,7 +93,7 @@ export const ContactForm = () => {
 
   return (
     <FormStyle onSubmit={handleSubmit(onSubmit)}>
-       <Title>Створити контакт</Title>
+      <Title>Створити контакт</Title>
       <InputGroup>
         <InputLabel htmlFor={nameId}>Ім'я</InputLabel>
         <Input
@@ -123,8 +123,9 @@ export const ContactForm = () => {
           <ErrorMessageStyle>{errors.number?.message}</ErrorMessageStyle>
         )}
       </InputGroup>
-      <Button type="submit">Додати контакт
-      <IoPersonAddOutline/>
+      <Button type="submit">
+        Додати контакт
+        <IoPersonAddOutline />
       </Button>
     </FormStyle>
   );

@@ -1,4 +1,4 @@
-import iconLogo from 'components/images/iconsTelephone-64.png'
+import iconLogo from 'components/images/iconsTelephone-64.png';
 import { AuthNav } from 'components/AuthNav/AuthNav';
 import { useAuth } from 'components/hooks';
 import { Navigation } from 'components/Navigation/Navigation';
@@ -12,14 +12,12 @@ export const AppBar = () => {
   return (
     <HeaderContainer>
       <Link to="/">
-      <Logo src={iconLogo} alt="Logo" width='50'/>
-        </Link>
-     
-        <Navigation />
+        <Logo src={iconLogo} alt="Logo" width="50" />
+      </Link>
 
-        {isLoggedIn ? <UserMenu /> : <AuthNav />}
+      <Navigation />
 
-
+      {isLoggedIn ? <UserMenu /> : <AuthNav />}
     </HeaderContainer>
   );
 };
