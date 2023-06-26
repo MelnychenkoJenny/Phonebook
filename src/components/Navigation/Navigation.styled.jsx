@@ -38,4 +38,14 @@ display: inline-block;;
         background-color: #684c4c;
       }
   }
+  @media screen and (min-width: 1200px) {
+    font-size: 28px;
+   }
 `;
+export const ListNav = styled.ul`
+display: flex;
+gap: 30px;
+@media screen and (min-width: 1200px) {
+  gap: 100px;
+ }
+`
