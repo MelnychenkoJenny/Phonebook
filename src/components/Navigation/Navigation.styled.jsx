@@ -43,8 +43,15 @@ display: inline-block;;
    }
 `;
 export const ListNav = styled.ul`
-display: flex;
-gap: 30px;
+@media screen and (min-width: 450px) {
+  display: flex;
+  gap: 20px;
+ }
+ @media screen and (min-width: 500px) {
+  display: flex;
+  gap: 50px;
+ }
+
 @media screen and (min-width: 1200px) {
   gap: 100px;
  }
