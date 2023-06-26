@@ -1,4 +1,3 @@
-import { Container } from 'components/App/App.styled';
 import {
   Button,
   FormStyle,
