@@ -1,7 +1,6 @@
 import {
   AmountContacts,
   ContactsContainer,
-  Container,
   EmptyText,
   Title,
 } from 'components/App/App.styled';
