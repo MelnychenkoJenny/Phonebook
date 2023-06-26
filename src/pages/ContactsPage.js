@@ -35,6 +35,7 @@ export default function ContactsPage() {
   return (
     <ContainerContactsPage>
       {isLoading && !error && <Loader />}
+
       <ContactForm />
       <ContactsContainer>
         {error ? (

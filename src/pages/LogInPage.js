@@ -16,6 +16,7 @@ import { logIn } from 'redux/Auth/operationsAuth';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { ContainerLogInPage } from './LogInPage.styled';
+import { Title } from 'components/App/App.styled';
 
 const schema = yup.object().shape({
   email: yup
@@ -61,6 +62,7 @@ export default function LoginPage() {
   return (
     <ContainerLogInPage>
       <FormStyle onSubmit={handleSubmit(onSubmit)}>
+      <Title>Вхід в систему</Title>
         <InputGroup>
           <InputLabel htmlFor={emailId}>Пошта</InputLabel>
           <Input

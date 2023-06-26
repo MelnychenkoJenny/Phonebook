@@ -88,6 +88,11 @@ export const Button = styled.button`
     box-shadow: ${({ theme: { colors } }) => colors.buttonShadowHover} 0px 0px
       5px 2px;
   }
+  svg {
+    width: 25px;
+    height: 25px;
+    margin-left: 10px;
+  }
   @media screen and (min-width: 1200px) {
     font-size: 18px;
     padding: 8px 15px;

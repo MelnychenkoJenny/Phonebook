@@ -12,13 +12,13 @@ export const AppBar = () => {
   return (
     <HeaderContainer>
       <Link to="/" end>
-      <img src={iconLogo} alt="Logo" />
+      <img src={iconLogo} alt="Logo" width='50'/>
         </Link>
      
         <Navigation />
-        <div>
+
         {isLoggedIn ? <UserMenu /> : <AuthNav />}
-      </div>
+
 
     </HeaderContainer>
   );

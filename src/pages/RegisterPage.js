@@ -16,6 +16,7 @@ import { registerAuth } from 'redux/Auth/operationsAuth';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { ContainerRegisterPage } from './RegisterPage.styled';
+import { Title } from 'components/App/App.styled';
 
 const schema = yup.object().shape({
   name: yup.string().required("Ім'я обов'язкове!"),
@@ -65,7 +66,9 @@ export default function RegisterPage() {
 
   return (
     <ContainerRegisterPage>
+            
       <FormStyle onSubmit={handleSubmit(onSubmit)}>
+      <Title>Реєстрація</Title>
         <InputGroup>
           <InputLabel htmlFor={nameId}>Ім'я / Нік</InputLabel>
           <Input
