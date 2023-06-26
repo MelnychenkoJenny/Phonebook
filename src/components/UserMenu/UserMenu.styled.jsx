@@ -17,7 +17,7 @@ padding: 10px;
   background-color: ${({ theme: { colors } }) => colors.bgAlfaDark};
   border-radius: 15px;
   animation: ${showRight} 0.35s ease-out forwards;
-  @media screen and (min-width: 1200px) {
+  @media screen and (min-width: 760px) {
     display: flex;
   justify-content: center;
   gap: 20px;
@@ -27,7 +27,10 @@ padding: 10px;
 `
 export const WelcomeText = styled.p`
   text-shadow: ${({ theme: { colors } }) => colors.textShadowDark};
-  @media screen and (min-width: 1200px) {
+  @media screen and (min-width: 760px) {
+    font-size: 18px;
+   }
+   @media screen and (min-width: 1200px) {
     font-size: 22px;
    }
 `

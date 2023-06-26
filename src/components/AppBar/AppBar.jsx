@@ -11,7 +11,7 @@ export const AppBar = () => {
 
   return (
     <HeaderContainer>
-      <Link to="/" end>
+      <Link to="/">
       <Logo src={iconLogo} alt="Logo" width='50'/>
         </Link>
      

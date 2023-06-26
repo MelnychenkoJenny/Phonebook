@@ -1,23 +1,20 @@
-import { useAuth } from "components/hooks"
-import { ListNav, NavLinkStyle } from "./Navigation.styled"
-
+import { useAuth } from 'components/hooks';
+import { ListNav, NavLinkStyle } from './Navigation.styled';
 
 export const Navigation = () => {
-  const {isLoggedIn} = useAuth()
+  const { isLoggedIn } = useAuth();
   return (
     <nav>
-    <ListNav>
-      <li>
-        <NavLinkStyle to="/" end>
-         Головна
-        </NavLinkStyle>
-      </li>
-{isLoggedIn && (<li>
-        <NavLinkStyle to="/contacts">Мої контакти</NavLinkStyle>
-      </li>)}
-      
-    </ListNav>
-  </nav>
-  )
-}
-
+      <ListNav>
+        <li>
+          <NavLinkStyle to="/">Головна</NavLinkStyle>
+        </li>
+        {isLoggedIn && (
+          <li>
+            <NavLinkStyle to="/contacts">Мої контакти</NavLinkStyle>
+          </li>
+        )}
+      </ListNav>
+    </nav>
+  );
+};

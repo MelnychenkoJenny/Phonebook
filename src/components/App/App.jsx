@@ -7,6 +7,7 @@ import { lazy } from 'react';
 import { useDispatch } from 'react-redux';
 import { Route, Routes } from 'react-router-dom';
 import { refreshUser } from 'redux/Auth/operationsAuth';
+import { useFetchContactsQuery } from 'redux/Contacts/contactsApi';
 
 const HomePage = lazy(() => import('pages/HomePage'));
 const RegisterPage = lazy(() => import('pages/RegisterPage'));
@@ -16,13 +17,17 @@ const ContactsPage = lazy(() => import('pages/ContactsPage'));
 export const App = () => {
   const dispatch = useDispatch();
   const { isRefreshing } = useAuth();
+  const {
+    isFetching: isLoading,
+  } = useFetchContactsQuery();
+
 
   useEffect(() => {
     dispatch(refreshUser());
   }, [dispatch]);
 
   return (
-    !isRefreshing && (
+    !isLoading && !isRefreshing && (
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<HomePage />} />
