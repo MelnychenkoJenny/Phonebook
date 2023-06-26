@@ -10,11 +10,11 @@ to {
 }`;
 
 export const ContainerHomePage = styled(Container)`
+
   padding-top: 40px;
   padding-bottom: 40px;
-  height: 100vh;
   background-color: ${({ theme: { colors } }) => colors.bgAlfa};
-
+min-height: calc(100vh - 210px);
   animation: ${slideIn} 0.35s ease-out forwards;
   transform: translateY(100%);
   @media screen and (min-width: 768px) {
