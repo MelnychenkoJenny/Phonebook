@@ -18,7 +18,10 @@ export const HeartIcon = styled(BsFillSuitHeartFill)`
 animation: ${heartbeat} 1s infinite;
 `
 export const FooterStyle = styled.footer`
-
+position: fixed;
+left: 0;
+bottom: 0;
+width: 100%;
 padding: 15px;
 display: flex;
     justify-content: center;

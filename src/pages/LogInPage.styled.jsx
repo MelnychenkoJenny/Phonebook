@@ -11,5 +11,5 @@ const slideIn = keyframes` from {
 export const ContainerLogInPage = styled(Container)`
   animation: ${slideIn} 0.35s ease-out forwards;
   transform: translateY(100%);
-  min-height: calc(100vh - 190px);
+  // min-height: calc(100vh - 190px);
 `;
