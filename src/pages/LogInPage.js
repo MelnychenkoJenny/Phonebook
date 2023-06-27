@@ -71,7 +71,7 @@ export default function LoginPage() {
             name="email"
             id={emailId}
             {...register('email')}
-            title="Пошта обов'язково латиницею, має містити @ та текст після."
+            title="Пошта обов'язково латиницею, має містити @ та текст після. Наприклад: poshta@gameil.com"
           />
           {errors.email && (
             <ErrorMessageStyle>{errors.email?.message}</ErrorMessageStyle>
