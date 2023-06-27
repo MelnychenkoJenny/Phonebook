@@ -10,17 +10,15 @@ to {
 }`;
 
 export const ContainerHomePage = styled(Container)`
-
   padding-top: 40px;
   padding-bottom: 40px;
   background-color: ${({ theme: { colors } }) => colors.bgAlfa};
   justify-content: center;
-min-height: calc(100vh - 210px);
+  min-height: calc(100vh - 215px);
   animation: ${slideIn} 0.35s ease-out forwards;
   transform: translateY(100%);
   @media screen and (min-width: 768px) {
     width: 50%;
-
   }
   @media screen and (min-width: 1200px) {
     padding-left: 30px;
@@ -71,6 +69,7 @@ export const LinkStyle = styled(Link)`
   position: relative;
   font-size: inherit;
   font-weight: 600;
+  margin-left: 5px;
   transition: text-shadow 0.3s ease;
   text-shadow: rgba(130, 130, 130, 0.5) 4px 2px 3px;
 
