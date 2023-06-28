@@ -1,4 +1,4 @@
-import { formattedNumber } from 'components/calc/numberFormatted';
+// import { formattedNumber } from 'components/calc/numberFormatted';
 import { toast } from 'react-toastify';
 import { useDeleteContactsMutation } from 'redux/Contacts/contactsApi';
 import { ContactsList, ContactsItem, ButtonDelete } from './Contacts.styled';
