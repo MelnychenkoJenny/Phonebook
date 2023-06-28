@@ -17,17 +17,13 @@ const heartbeat = keyframes`
 export const HeartIcon = styled(BsFillSuitHeartFill)`
 animation: ${heartbeat} 1s infinite;
 `
-export const FooterStyle = styled.footer`
-position: fixed;
-left: 0;
-bottom: 0;
-width: 100%;
-padding: 15px;
+export const FooterStyle = styled.div`
+
 display: flex;
     justify-content: center;
     gap: 10px;
     align-items: center;
-background-color: ${({ theme: { colors } }) => colors.bgAlfa};
+// background-color: ${({ theme: { colors } }) => colors.bgAlfa};
 // @media screen and (min-width: 768px) {
 //     width: 50%;
 

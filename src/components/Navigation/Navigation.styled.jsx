@@ -4,7 +4,7 @@ import styled from 'styled-components';
 export const NavLinkStyle = styled(NavLink)`
   display: inline-block;
   position: relative;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 600;
   transition: transform 0.3s ease, text-shadow 0.3s ease;
   &:hover {
@@ -39,7 +39,7 @@ export const NavLinkStyle = styled(NavLink)`
     }
   }
   @media screen and (min-width: 1200px) {
-    font-size: 28px;
+    font-size: 20px;
   }
 `;
 export const ListNav = styled.ul`

@@ -12,9 +12,10 @@ to {
 export const ContainerHomePage = styled(Container)`
   padding-top: 40px;
   padding-bottom: 40px;
+  gap: 40px;
   background-color: ${({ theme: { colors } }) => colors.bgAlfa};
-  justify-content: center;
-  min-height: calc(100vh - 215px);
+  justify-content: space-around;
+  min-height: calc(100vh - 133px);
   animation: ${slideIn} 0.35s ease-out forwards;
   transform: translateY(100%);
   @media screen and (min-width: 768px) {
@@ -25,7 +26,12 @@ export const ContainerHomePage = styled(Container)`
     padding-right: 30px;
   }
 `;
-
+export const ContentHomePage = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
 export const MainTitle = styled.h1`
   margin-bottom: 20px;
   font-size: 34px;
@@ -53,13 +59,13 @@ export const IconBox = styled.div`
   gap: 20px;
 
   & > svg {
-    width: 80px;
-    height: 80px;
+    width: 60px;
+    height: 60px;
   }
   @media screen and (min-width: 1200px) {
     & > svg {
-      width: 120px;
-      height: 120px;
+      width: 80px;
+      height: 80px;
     }
   }
 `;
