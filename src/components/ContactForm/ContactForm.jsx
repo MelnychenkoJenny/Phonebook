@@ -98,6 +98,7 @@ export const ContactForm = () => {
           name="name"
           title="Name may contain letters and numbers, apostrophe, dash and spaces. For example Adrian, Jacob Mercer2, Charles de Batz de Castelmore d'Artagnan"
           // required
+          autoFocus
           id={nameId}
         />
 

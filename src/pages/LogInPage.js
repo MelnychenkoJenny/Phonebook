@@ -67,6 +67,7 @@ export default function LoginPage() {
         <InputGroup>
           <InputLabel htmlFor={emailId}>Пошта</InputLabel>
           <Input
+          autoFocus
             type="email"
             name="email"
             id={emailId}

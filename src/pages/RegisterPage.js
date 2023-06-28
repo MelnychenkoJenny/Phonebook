@@ -72,6 +72,7 @@ export default function RegisterPage() {
           <InputLabel htmlFor={nameId}>Ім'я / Нік</InputLabel>
           <Input
             {...register('name')}
+            autoFocus
             type="text"
             name="name"
             id={nameId}
