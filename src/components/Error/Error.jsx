@@ -5,7 +5,7 @@ export const Error = ({ error }) => {
   return (
     <ContainerError>
       <p style={{textAlign: 'center',}}>
-        Ooops... Something went wrong. {error} Try again later. 🙄
+       Упс... Щось пішло не по плану. {error} Спробуйте пізніше. 🙄
       </p>
       <img
         src={EmptyImg}
