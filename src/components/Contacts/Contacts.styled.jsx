@@ -24,13 +24,14 @@ export const ContactsItem = styled.li`
   flex-direction: column;
   justify-content: space-between;
   position: relative;
+  gap: 5px;
   padding: 10px;
-  flex-basis: calc((100% - 10px) / 3);
+  // flex-basis: calc((100% - 10px) / 3);
+      flex-basis: 190px;
   background-color: ${({ theme: { colors } }) => colors.bgAlfaDark};
   border-radius: 15px;
   animation: ${showUp} 400ms ease-in-out;
   @media screen and (min-width: 768px) {
-    flex-basis: calc((100% - 10px) / 7);
     background-color: ${({ theme: { colors } }) => colors.bgAlfa};
   }
   @media screen and (min-width: 1200px) {
@@ -38,8 +39,15 @@ export const ContactsItem = styled.li`
   }
 `;
 
+export const Phone = styled.a`
+display: flex;
+    justify-content: center;
+    align-items: end;
+    gap: 8px;
+`
+
 export const ButtonDelete = styled.button`
-  margin: 10px auto 0px;
+  margin: 0px auto 0px;
   display: flex;
   justify-content: center;
   align-items: center;

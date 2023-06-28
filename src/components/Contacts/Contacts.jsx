@@ -1,7 +1,7 @@
-// import { formattedNumber } from 'components/calc/numberFormatted';
 import { toast } from 'react-toastify';
 import { useDeleteContactsMutation } from 'redux/Contacts/contactsApi';
-import { ContactsList, ContactsItem, ButtonDelete } from './Contacts.styled';
+import { ContactsList, ContactsItem, ButtonDelete, Phone } from './Contacts.styled';
+import { BiPhoneCall } from 'react-icons/bi';
 
 export const Contacts = ({ contacts }) => {
   const [deleteContact] = useDeleteContactsMutation();
@@ -16,8 +16,8 @@ export const Contacts = ({ contacts }) => {
       {contacts.map(({ id, name, number }) => (
         <ContactsItem key={id}>
           <p>{name}</p>
-          {/* <p>{formattedNumber(number)}</p> */}
-          <a href={`tel:${number}`}>{number}</a>
+          
+          <Phone href={`tel:${number}`}><BiPhoneCall/>{number}</Phone>
 
           <ButtonDelete onClick={() => handleDeleteContact(id)}>
             Видалити

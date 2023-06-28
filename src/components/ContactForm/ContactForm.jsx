@@ -11,7 +11,6 @@ import {
   Button,
   ErrorMessageStyle,
 } from './ContacrForm.styled';
-// import { phoneRegExp } from 'components/calc/phoneRegExp';
 import { toast } from 'react-toastify';
 import { withHookFormMask } from 'use-mask-input';
 import {
@@ -27,10 +26,6 @@ const schema = yup.object().shape({
   number: yup
     .string()
     .required("Номер обов'язковий!")
-    // .matches(
-    //   phoneRegExp,
-    //   'Номер має складатись тільки з цифр. Приберіть лишні символи.'
-    // )
     .min(7, 'Номер має бути не менше 7 цифр'),
 });
 
@@ -57,7 +52,7 @@ export const ContactForm = () => {
       el => el.name.toLowerCase() === data.name.trim().toLowerCase()
     );
     const repeatNumber = contacts.some(
-      el => el.number.replace(/\D/g, '') === data.number.toLowerCase()
+      el => el.number.replace(/\D/g, '') === data.number.replace(/\D/g, '')
     );
     if (repeatName || repeatNumber) {
       return;
@@ -70,7 +65,7 @@ export const ContactForm = () => {
       el => el.name.toLowerCase() === name.toLowerCase()
     );
     const repeatNumber = contacts.some(
-      el => el.number.replace(/\D/g, '') === number.toLowerCase()
+      el => el.number.replace(/\D/g, '') === number.replace(/\D/g, '')
     );
 
     if (repeatName) {
