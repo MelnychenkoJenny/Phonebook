@@ -1,3 +1,4 @@
+import { Error } from 'components/Error/Error';
 import { useAuth } from 'components/hooks';
 import { Layout } from 'components/Layout/Layout';
 import { Loader } from 'components/Loader/Loader';
@@ -49,6 +50,7 @@ export const App = () => {
                 <PrivateRoute component={ContactsPage} redirectTo="/login" />
               }
             />
+            <Route path="*" element={<Error />} />
           </Route>
         </Routes>
       )}

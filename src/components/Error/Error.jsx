@@ -1,8 +1,9 @@
+import { ContainerError } from './Error.styled';
 import EmptyImg from './errorImg.png';
 
 export const Error = ({ error }) => {
   return (
-    <div>
+    <ContainerError>
       <p style={{textAlign: 'center',}}>
         Ooops... Something went wrong. {error} Try again later. 🙄
       </p>
@@ -11,9 +12,8 @@ export const Error = ({ error }) => {
         alt="emptyImageCat"
         style={{
           width: '170px',
-          margin: '15px auto auto',
         }}
       />
-    </div>
+    </ContainerError>
   );
 };
