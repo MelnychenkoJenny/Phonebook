@@ -16,7 +16,9 @@ export const Contacts = ({ contacts }) => {
       {contacts.map(({ id, name, number }) => (
         <ContactsItem key={id}>
           <p>{name}</p>
-          <p>{formattedNumber(number)}</p>
+          {/* <p>{formattedNumber(number)}</p> */}
+          <a href={`tel:${number}`}>{number}</a>
+
           <ButtonDelete onClick={() => handleDeleteContact(id)}>
             Видалити
           </ButtonDelete>

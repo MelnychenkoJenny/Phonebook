@@ -13,6 +13,7 @@ import {
 } from './ContacrForm.styled';
 import { phoneRegExp } from 'components/calc/phoneRegExp';
 import { toast } from 'react-toastify';
+import { withHookFormMask } from 'use-mask-input';
 import {
   useAddContactsMutation,
   useFetchContactsQuery,
@@ -26,10 +27,10 @@ const schema = yup.object().shape({
   number: yup
     .string()
     .required("Номер обов'язковий!")
-    .matches(
-      phoneRegExp,
-      'Номер має складатись тільки з цифр. Приберіть лишні символи.'
-    )
+    // .matches(
+    //   phoneRegExp,
+    //   'Номер має складатись тільки з цифр. Приберіть лишні символи.'
+    // )
     .min(7, 'Номер має бути не менше 7 цифр'),
 });
 
@@ -112,7 +113,8 @@ export const ContactForm = () => {
       <InputGroup>
         <InputLabel htmlFor={numberId}>Телефон</InputLabel>
         <Input
-          {...register('number')}
+        {...withHookFormMask(register('number'), ['+99 (999) 999 99 99'])}
+          // {...register('number')}
           type="tel"
           name="number"
           title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
