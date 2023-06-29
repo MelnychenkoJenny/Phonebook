@@ -10,6 +10,7 @@ import { BsPhoneVibrate, BsPen, BsPeople } from 'react-icons/bs';
 import { Footer } from 'components/Footer/Footer';
 
 export default function HomePage() {
+
   return (
     <ContainerHomePage>
       <ContentHomePage>

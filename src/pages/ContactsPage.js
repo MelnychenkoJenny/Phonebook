@@ -9,6 +9,7 @@ import { Contacts } from 'components/Contacts';
 import { Error } from 'components/Error/Error';
 import { Filter } from 'components/Filter';
 import { Loader } from 'components/Loader/Loader';
+import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { useFetchContactsQuery } from 'redux/Contacts/contactsApi';
 import { selectFilter } from 'redux/selectors';
@@ -16,10 +17,15 @@ import { ContainerContactsPage } from './ContactsPage.styled';
 
 export default function ContactsPage() {
   const {
+    refetch,
     data: contacts = [],
     isFetching: isLoading,
     error,
   } = useFetchContactsQuery();
+
+  useEffect(() => {
+    refetch();
+  }, [refetch]);
 
   const filter = useSelector(selectFilter);
 
