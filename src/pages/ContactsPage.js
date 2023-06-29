@@ -23,7 +23,6 @@ export default function ContactsPage() {
     isLoading: isFirstLoading,
     error,
   } = useFetchContactsQuery();
-console.log(useFetchContactsQuery())
   useEffect(() => {
     refetch();
   }, [refetch]);
