@@ -12,6 +12,7 @@ const handleAuthorisationFulfilled = (state, action) => {
   state.user = action.payload.user;
   state.token = action.payload.token;
   state.isLoggedIn = true;
+  state.isLoading = false;
 };
 const handleRejectedAuthorisation = (state, { payload }) => {
   state.error = payload;

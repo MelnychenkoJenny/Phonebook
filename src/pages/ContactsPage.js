@@ -20,9 +20,10 @@ export default function ContactsPage() {
     refetch,
     data: contacts = [],
     isFetching: isLoading,
+    isLoading: isFirstLoading,
     error,
   } = useFetchContactsQuery();
-
+console.log(useFetchContactsQuery())
   useEffect(() => {
     refetch();
   }, [refetch]);
@@ -53,7 +54,7 @@ export default function ContactsPage() {
               Загальна кількість контактів: {contacts.length}
             </AmountContacts>
             <Filter />
-            {visibleContacts.length ? (
+            {visibleContacts.length && !isFirstLoading ? (
               <Contacts contacts={visibleContacts} />
             ) : (
               <EmptyText>Не знайдено жодного контакту</EmptyText>
