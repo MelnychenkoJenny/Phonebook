@@ -13,3 +13,4 @@ export const ContainerRegisterPage = styled(Container)`
   transform: translateY(100%);
   // min-height: calc(100vh - 200px);
 `;
+

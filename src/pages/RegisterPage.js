@@ -17,6 +17,9 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { ContainerRegisterPage } from './RegisterPage.styled';
 import { Title } from 'components/App/App.styled';
+import { BsEye, BsEyeSlash } from 'react-icons/bs';
+import { useState } from 'react';
+import { BtnVisiblePassword } from './LogInPage.styled';
 
 const schema = yup.object().shape({
   name: yup.string().required("Ім'я обов'язкове!"),
@@ -45,6 +48,7 @@ export default function RegisterPage() {
     resolver: yupResolver(schema),
   });
 
+ const [passwordVisible, setPasswordVisible] = useState(false);
   const dispatch = useDispatch();
 
   const onSubmit = ({ name, email, password }) => {
@@ -63,7 +67,7 @@ export default function RegisterPage() {
         )
       );
   };
-
+  const togglePasswordVisible = () => setPasswordVisible(!passwordVisible);
   return (
     <ContainerRegisterPage>
       <FormStyle onSubmit={handleSubmit(onSubmit)}>
@@ -98,7 +102,7 @@ export default function RegisterPage() {
         <InputGroup>
           <InputLabel htmlFor={passwordId}>Пароль</InputLabel>
           <Input
-            type="password"
+            type={passwordVisible ? 'text' : 'password'}
             name="password"
             id={passwordId}
             {...register('password')}
@@ -107,6 +111,7 @@ export default function RegisterPage() {
           {errors.password && (
             <ErrorMessageStyle>{errors.password?.message}</ErrorMessageStyle>
           )}
+           <BtnVisiblePassword type='button' onClick={togglePasswordVisible} data-shown={passwordVisible}>{passwordVisible ? <BsEye /> : <BsEyeSlash/>}</BtnVisiblePassword>
         </InputGroup>
         <Button type="submit">
           Зареєструвати
