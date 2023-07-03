@@ -8,6 +8,8 @@ import {
 } from 'components/ContactForm/ContacrForm.styled';
 import { nanoid } from 'nanoid';
 import { CiLogin } from 'react-icons/ci';
+import { BsEyeSlash, BsEye } from 'react-icons/bs';
+
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useForm } from 'react-hook-form';
@@ -15,8 +17,9 @@ import { useDispatch } from 'react-redux';
 import { logIn } from 'redux/Auth/operationsAuth';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { ContainerLogInPage } from './LogInPage.styled';
+import { BtnVisiblePassword, ContainerLogInPage } from './LogInPage.styled';
 import { Title } from 'components/App/App.styled';
+import { useState } from 'react';
 
 const schema = yup.object().shape({
   email: yup
@@ -42,7 +45,7 @@ export default function LoginPage() {
   } = useForm({
     resolver: yupResolver(schema),
   });
-
+  const [passwordVisible, setPasswordVisible] = useState(false);
   const dispatch = useDispatch();
 
   const onSubmit = ({ email, password }) => {
@@ -60,6 +63,8 @@ export default function LoginPage() {
         toast.error('Упс. Пошта або пароль не вірні. Спробуйте ще раз. 🙄')
       );
   };
+  const togglePasswordVisible = () => setPasswordVisible(!passwordVisible);
+
   return (
     <ContainerLogInPage>
       <FormStyle onSubmit={handleSubmit(onSubmit)}>
@@ -81,7 +86,7 @@ export default function LoginPage() {
         <InputGroup>
           <InputLabel htmlFor={passwordId}>Пароль</InputLabel>
           <Input
-            type="password"
+          type={passwordVisible ? 'text' : 'password'}
             name="password"
             id={passwordId}
             {...register('password')}
@@ -90,6 +95,7 @@ export default function LoginPage() {
           {errors.password && (
             <ErrorMessageStyle>{errors.password?.message}</ErrorMessageStyle>
           )}
+          <BtnVisiblePassword type='button' onClick={togglePasswordVisible} data-shown={passwordVisible}>{passwordVisible ? <BsEye /> : <BsEyeSlash/>}</BtnVisiblePassword>
         </InputGroup>
         <Button type="submit">
           Вхід

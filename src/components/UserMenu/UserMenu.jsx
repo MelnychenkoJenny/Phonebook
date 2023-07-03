@@ -8,6 +8,10 @@ import { ButtonExit, UserMenuContainer, WelcomeText } from './UserMenu.styled';
 
 export const UserMenu = () => {
   const { user } = useAuth();
+
+  const user2  = useAuth();
+console.log(user2)
+
   const dispatch = useDispatch();
   const handleLogOut = () =>
     dispatch(logOut())

@@ -13,3 +13,28 @@ export const ContainerLogInPage = styled(Container)`
   transform: translateY(100%);
   // min-height: calc(100vh - 190px);
 `;
+
+export const BtnVisiblePassword = styled.button`
+position: absolute;
+top: 55%;
+right: 3px;
+padding: 3px;
+width: 26px;
+height: 25px;
+background-color: transparent;
+color:rgb(57, 23, 23);
+border: transparent;
+border-radius: 15px;
+cursor: pointer;
+transition: transform 300ms linear;
+
+  &:hover {
+    transform: scale(1.15);
+    
+   
+  }
+
+  // &:hover > svg {
+  //   fill: #fff;
+  // }
+`;

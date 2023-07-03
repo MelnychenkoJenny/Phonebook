@@ -26,6 +26,7 @@ export const FormStyle = styled.form`
 `;
 
 export const InputGroup = styled.div`
+  position: relative;
   display: flex;
   flex-direction: column;
   margin-bottom: 10px;
@@ -36,7 +37,7 @@ export const InputGroup = styled.div`
 
 export const Input = styled.input`
   width: 230px;
-  padding: 5px 8px;
+  padding: 5px 25px 5px 8px;
   outline: none;
   border: 2px solid ${({ theme: { colors } }) => colors.border};
   background-color: transparent;
