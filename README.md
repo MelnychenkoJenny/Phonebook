@@ -1,10 +1,10 @@
-# Книга контактів
+# Contacts Book
+Added functionality for user registration, login, and updates, as well as managing a private collection of contacts.
 
-Додано можливість реєстрації, логіна та оновлення користувача, а також роботу з приватною колекцією контактів.
+A ready-to-use backend was utilized for this task.
 
-Для цього завдання використовувався готовий бекенд. 
-### Change local
-Він підтримує всі необхідні операції з колекцією контактів, а також реєстрацію, логін та оновлення користувача за допомогою JWT.
+### Change Local
+The backend supports all necessary operations with the contacts collection, as well as user registration, login, and updates using JWT.
 
 
 ![Phonebook site Home page desktop](./assets/desctopHome.jpg)
